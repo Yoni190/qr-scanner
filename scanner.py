@@ -1,6 +1,7 @@
 import cv2
 
 cap = cv2.VideoCapture(0)
+detector = cv2.QRCodeDetector()
 
 while(True):
     ret, frame = cap.read()
