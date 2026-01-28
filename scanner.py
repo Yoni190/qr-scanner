@@ -6,6 +6,12 @@ detector = cv2.QRCodeDetector()
 while(True):
     ret, frame = cap.read()
 
+    data, bboc, _ = detector.detectAndDecode(frame)
+
+    if data:
+        a = data
+        break
+
     cv2.imshow("Scanner", frame)
 
 
