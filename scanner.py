@@ -10,7 +10,7 @@ while(True):
     data, bboc, _ = detector.detectAndDecode(frame)
 
     if data:
-        a = data
+        a = str(data)
         break
 
     cv2.imshow("Scanner", frame)
@@ -19,6 +19,7 @@ while(True):
     if cv2.waitKey(1) == ord("q"):
         break
     
-webbrowser.open(str(a))
+if data:
+    webbrowser.open(a)
 cap.release()
 cv2.destroyAllWindows()
